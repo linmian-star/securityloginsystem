@@ -1,6 +1,8 @@
 import {createBrowserRouter,Navigate} from"react-router-dom"
 import Login from "../pages/Login"
 import Dashboard from "../pages/Dashboard"
+import user from "../pages/user"
+import MainLayout from "../layout/MainLayout"
 const AuthRoute =({children})=>{
     const token=localStorage.getItem("token")
     if(!token){
@@ -21,7 +23,13 @@ const router = createBrowserRouter([
     },
     {
         path:"/Dashboard",
-        element:(<AuthRoute><Dashboard/></AuthRoute>)
+        element:(<AuthRoute><Dashboard/></AuthRoute>),
+        children:[
+            {
+                path:"user",element:<user/>
+            }
+        ]
+
     }
 
 ])

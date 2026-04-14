@@ -1,0 +1,23 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.Sidebar {
+  width: 200px;
+  background: #333;
+  color: #fff;
+}
+
+.main {
+  flex: 1;
+}
+
+.header {
+  height: 60px;
+  background: #eee;
+}
+
+.content {
+  padding: 20px;
+}
