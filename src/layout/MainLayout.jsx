@@ -7,6 +7,7 @@ function MainLayout()
 {
     return(
         <div className="layout">
+          
       
       {/* 左侧 */}
       <div className="Sidebar">
@@ -14,7 +15,7 @@ function MainLayout()
       </div>
 
       {/* 右侧 */}
-      <div className="main">
+      < div className="main">
         
         {/* 顶部 */}
         <div className="header">
@@ -24,10 +25,13 @@ function MainLayout()
         {/* 内容 */}
         <div className="content">
           内容区
+          <Outlet />
+        </div>
         </div>
 
-      </div>
-      <div><Outlet /></div>
+
+      
+      
     </div>
   )
 }

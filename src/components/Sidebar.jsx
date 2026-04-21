@@ -7,7 +7,7 @@ function Sidebar(){
             <NavLink to="/pages/Dashboard">首页</NavLink>
         </div>
         <div>
-            <NavLink to="/pages/user">用户管理</NavLink>
+            <NavLink to="pages/User">用户管理</NavLink>
         </div>
         </div>
     )
