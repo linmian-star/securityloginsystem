@@ -1,6 +1,7 @@
 import { useState } from "react"; 
 import { useNavigate } from "react-router-dom";
 import "./index.css"
+import bgImage from "../../assets/Login-bg.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -23,7 +24,9 @@ function Login() {
   };
 
   return (
+
   <div className="login-container">
+    <img src={bgImage} alt="背景图" className="background-image" />
     <div className="login-box">
       <h2>安全后台系统登录</h2>
       

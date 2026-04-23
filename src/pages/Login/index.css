@@ -1,16 +1,23 @@
 /* 整个背景容器 */
 .login-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
   /* 建议用一个深邃一点的颜色，或者带点渐变，显得有安全感 */
-  background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持图片比例，覆盖整个背景 */
+  z-index: -1; /* 确保背景图在内容后面 */
+  opacity: 0.9; /* 调整背景图的透明度，增加层次感 */}
 
 /* 登录卡片 */
 .login-box {
