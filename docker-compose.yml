@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  # 你原有的后端服务  
+  api:
+    build: ./back-end
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./back-end:/app
+    depends_on:
+      - mongodb # 告诉 Docker，必须先启动数据库再启动后端
+
+  # 新增的 MongoDB 数据库服务
+  mongodb:
+    image: mongo:latest
+    container_name: security_db
+    ports:
+      - "27017:27017" # MongoDB 默认端口
+    volumes:
+      - ./mongodb_data:/data/db # 重要：把数据库文件存到本地，防止重启后数据丢失
