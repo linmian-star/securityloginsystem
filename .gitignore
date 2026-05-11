@@ -20,3 +20,4 @@ Thumbs.db
 # 编辑器配置
 .vscode/
 .idea/
+mongodb_data/

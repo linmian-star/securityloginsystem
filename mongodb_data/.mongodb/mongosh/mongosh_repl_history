@@ -1,2 +1,0 @@
-db.users.find().pretty()
-use security_system
