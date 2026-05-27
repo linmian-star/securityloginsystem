@@ -42,6 +42,33 @@ const verifyToken = (req, res, next) => {
     next(); 
   });
 };
+// 💡 在后端 server.js 中追加这个路由，供前端仪表盘调用
+app.get('/api/dashboard-stats', async (req, res) => {
+    try {
+        // 1. 从 MongoDB 中动态查询当前总共有多少个注册用户
+        // 这里的 User 是你定义的 Mongoose Model
+        const realUserCount = await User.countDocuments({}); 
+
+        // 2. 返回 JSON 数据给前端（格式必须和前端的 useState 对应上）
+        res.status(200).json({
+            userCount: realUserCount,       // 这里的数量会随着你 Postman 注册新用户而动态增加！
+            abnormalLogins: 5,              // 今日异常登录（防爆破拦截数，可先写死，后续接日志表）
+            onlineRate: "99.8%",            // 系统在线率
+            securityRating: "A+",           // 系统安全评级
+            trendData: [                    // 下方图表的历史审计趋势
+                { month: '1月', count: 45 },
+                { month: '2月', count: 85 },
+                { month: '3月', count: 92 },
+                { month: '4月', count: 130 },
+                { month: '5月', count: realUserCount } // 让5月的柱状图直接反映数据库真实人数
+            ]
+        });
+    } catch (err) {
+        console.error("后端统计接口崩溃:", err.stack);
+        res.status(500).json({ message: "获取安全指标失败", error: err.message });
+    }
+});
+
 app.post('/register', async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -67,6 +94,30 @@ app.post('/register', async (req, res) => {
     res.status(500).json({ code: 500, message: '注册失败', error: err.message,stack:err.stack});
   }
 });
+// 💡 这是一个专门给前端仪表盘提供数据的 GET 接口
+app.get('/api/dashboard-stats', async (req, res) => {
+    try {
+        // 1. 【这是真的】去 MongoDB 数据库里，数一数你现在到底注册了几个用户
+        // 哪怕你现在只有 1 个测试用户，count 也会精准拿到 1
+        const realUserCount = await User.countDocuments({}); 
+
+        // 2. 【这是模拟的】因为你现在还没写“登录爆破”和“日志审计”的功能，所以这些安全数据先写死
+        res.status(200).json({
+            userCount: realUserCount,       // 👈 真实数据：绑定数据库
+            abnormalLogins: 3,              // 模拟：今日拦截爆破 3 次
+            onlineRate: "99.9%",            // 模拟：系统在线率
+            securityRating: "A+",           // 模拟：安全评级
+            trendData: [
+                { month: '3月', count: 0 },
+                { month: '4月', count: 2 }, 
+                { month: '5月', count: realUserCount } // 👈 真实数据：让 5 月的柱子高度等于你数据库的真实人数！
+            ]
+        });
+    } catch (err) {
+        res.status(500).json({ message: "后端统计失败", error: err.message });
+    }
+});
+
 
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
