@@ -3,12 +3,15 @@ services:
   # 你原有的后端服务  
   api:
     build: ./back-end
+    env_file:
+      - ./back-end/.env
     ports:
       - "8080:8080"
     volumes:
       - ./back-end:/app
     depends_on:
       - mongodb # 告诉 Docker，必须先启动数据库再启动后端
+      - redis   # 新增：依赖 Redis
 
   # 新增的 MongoDB 数据库服务
   mongodb:
@@ -18,3 +21,10 @@ services:
       - "27017:27017" # MongoDB 默认端口
     volumes:
       - ./mongodb_data:/data/db # 重要：把数据库文件存到本地，防止重启后数据丢失
+
+  # 新增的 Redis 服务（用于 IP 锁等高速缓存）
+  redis:
+    image: redis:7-alpine
+    container_name: security_redis
+    ports:
+      - "6379:6379" # Redis 默认端口

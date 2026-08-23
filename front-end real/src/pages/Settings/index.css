@@ -1,0 +1,238 @@
+.settings-container {
+  padding: 24px;
+  max-width: 900px;
+}
+
+.settings-title {
+  margin: 0 0 16px;
+  font-size: 22px;
+  color: #262626;
+}
+
+/* Tab 切换条 */
+.settings-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.settings-tab {
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  color: #595959;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.settings-tab:hover {
+  color: #1890ff;
+}
+
+.settings-tab.active {
+  color: #1890ff;
+  border-bottom-color: #1890ff;
+  font-weight: 500;
+}
+
+/* 面板容器 */
+.settings-panel {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.settings-loading {
+  padding: 40px;
+  text-align: center;
+  color: #595959;
+}
+
+/* 错误提示块（请求失败时显示，避免一直卡在 loading） */
+.settings-error-block {
+  padding: 24px;
+  text-align: center;
+}
+
+.settings-error-title {
+  font-size: 16px;
+  color: #cf1322;
+  margin-bottom: 8px;
+}
+
+.settings-error-detail {
+  font-size: 13px;
+  color: #8c8c8c;
+  margin-bottom: 16px;
+  word-break: break-all;
+}
+
+/* 系统信息表格 */
+.settings-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.settings-info-table th,
+.settings-info-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.settings-info-table th {
+  background: #fafafa;
+  color: #595959;
+  font-weight: 600;
+  width: 200px;
+}
+
+.settings-info-table td {
+  color: #262626;
+}
+
+/* 状态徽标 */
+.status-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.status-ok {
+  background: #f6ffed;
+  color: #389e0d;
+}
+
+.status-fail {
+  background: #fff2f0;
+  color: #cf1322;
+}
+
+/* 刷新按钮 */
+.settings-refresh-btn {
+  padding: 8px 16px;
+  background: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #595959;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.settings-refresh-btn:hover {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+/* 修改密码表单 */
+.settings-current-user {
+  padding: 10px 0 16px;
+  font-size: 14px;
+  color: #595959;
+  border-bottom: 1px dashed #f0f0f0;
+  margin-bottom: 16px;
+}
+
+.settings-role-tag {
+  color: #8c8c8c;
+  margin-left: 4px;
+}
+
+.settings-message {
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.settings-message-success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #389e0d;
+}
+
+.settings-message-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #cf1322;
+}
+
+.settings-pwd-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 400px;
+}
+
+.settings-pwd-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #262626;
+  font-weight: 500;
+}
+
+.settings-pwd-form input {
+  padding: 8px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.settings-pwd-form input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.15);
+}
+
+.settings-pwd-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.settings-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.settings-btn-cancel {
+  background: #fafafa;
+  border: 1px solid #d9d9d9;
+  color: #595959;
+}
+
+.settings-btn-cancel:hover:not(:disabled) {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+.settings-btn-save {
+  background: #1890ff;
+  color: #fff;
+}
+
+.settings-btn-save:hover:not(:disabled) {
+  background: #40a9ff;
+}
+
+.settings-btn:disabled {
+  background: #bfbfbf;
+  color: #fff;
+  cursor: not-allowed;
+  border-color: #bfbfbf;
+}

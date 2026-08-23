@@ -1,0 +1,143 @@
+.sp-loading {
+  padding: 40px;
+  color: #595959;
+  text-align: center;
+}
+
+.sp-container {
+  padding: 24px;
+  max-width: 900px;
+}
+
+.sp-title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: #262626;
+}
+
+.sp-desc {
+  margin: 0 0 20px;
+  color: #595959;
+  font-size: 14px;
+}
+
+.sp-readonly-tip {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  color: #ad6800;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.sp-message {
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.sp-message-success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #389e0d;
+}
+
+.sp-message-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #cf1322;
+}
+
+.sp-form {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sp-form-row label {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #262626;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.sp-form-row input[type="number"] {
+  padding: 8px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.sp-form-row input[type="number"]:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.15);
+}
+
+.sp-form-row input[type="number"]:disabled {
+  background: #f5f5f5;
+  color: #8c8c8c;
+  cursor: not-allowed;
+}
+
+.sp-form-row small {
+  color: #8c8c8c;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.sp-form-row small.sp-muted {
+  color: #bfbfbf;
+}
+
+.sp-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px dashed #f0f0f0;
+  margin-top: 4px;
+}
+
+.sp-updated {
+  color: #8c8c8c;
+  font-size: 13px;
+}
+
+.sp-save-btn {
+  padding: 8px 20px;
+  background: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sp-save-btn:hover:not(:disabled) {
+  background: #40a9ff;
+}
+
+.sp-save-btn:disabled {
+  background: #bfbfbf;
+  cursor: not-allowed;
+}

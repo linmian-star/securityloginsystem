@@ -1,0 +1,20 @@
+/* 通用消息提示样式
+   从 Roles / SecurityPolicy / Settings 三个页面抽离
+   样式与原 roles-message / sp-message / settings-message 完全一致 */
+.message {
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.message-success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #389e0d;
+}
+
+.message-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #cf1322;
+}

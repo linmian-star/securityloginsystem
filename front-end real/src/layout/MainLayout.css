@@ -1,0 +1,35 @@
+.main-layout {
+  display: flex;
+  height: 100vh; /* 撑满全屏 */
+  width: 100vw;
+}
+
+.sidebar-container {
+  width: 240px; 
+  flex-shrink:0;    /* 侧边栏宽度固定 */
+  background-color: #001529; /* 深色背景更有安全感 */
+  color: white;
+}
+
+.content-container {
+  flex: 1; /* 右侧自动撑开剩余空间 */
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5; /* 内容区用浅灰色 */
+}
+
+.top-header {
+  height: 60px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.page-content {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto; /* 内容多了可以滚动 */
+}

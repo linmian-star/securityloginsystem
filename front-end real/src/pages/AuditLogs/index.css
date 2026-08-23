@@ -1,0 +1,73 @@
+/* AuditLogs.css */
+
+.audit-container h2 {
+  margin-bottom: 16px;
+}
+
+/* 筛选区 */
+.audit-filter {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.audit-filter select,
+.audit-filter input {
+  padding: 6px;
+}
+
+.audit-filter input {
+  width: 160px;
+}
+
+.audit-filter .search-btn {
+  padding: 6px 16px;
+  cursor: pointer;
+}
+
+/* 日志表格 */
+.audit-table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.audit-table th,
+.audit-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.audit-table .empty-row td {
+  text-align: center;
+  padding: 20px;
+}
+
+/* 状态颜色 */
+.audit-status-fail {
+  color: #f5222d;
+}
+
+.audit-status-success {
+  color: #52c41a;
+}
+
+/* 分页 */
+.audit-pagination {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.audit-pagination button {
+  cursor: pointer;
+}
+
+.audit-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
